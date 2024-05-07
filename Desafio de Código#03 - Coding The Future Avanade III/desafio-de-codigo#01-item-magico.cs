@@ -3,8 +3,11 @@ using System;
 public class ItemMagico
 {
     //TODO:  Crie a classe ItemMagico com os atributos nome, descrição e poder
-
-    public ItemMagico(string nome, string descricao, int poder)
+    public string Nome { get; set; }
+    public string Descricao { get; set; }
+    public int Poder { get; set; }
+    
+    public void Criar (string nome, string descricao, int poder)
     {
         Nome = nome;
         Descricao = descricao;
@@ -27,7 +30,8 @@ class Program
         int poder = int.Parse(Console.ReadLine());
 
         // Cria o item mágico
-        ItemMagico item = new ItemMagico(nome, descricao, poder);
+        ItemMagico item = new ItemMagico();
+        item.Criar(nome, descricao, poder);
 
         // Imprime o item criado
         Console.WriteLine($"Item: {item.Nome}\nDescrição: {item.Descricao}\nPoder: {item.Poder}");
